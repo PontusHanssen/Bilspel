@@ -77,6 +77,20 @@ namespace Bilspelet
             get { return driftsound; }
             set { driftsound = value; }
         }
+        public Car(int x, int y, int hp, Texture2D texture, SoundEffect driftsound, bool onroad)
+        {
+            this.x = x;
+            this.y = y;
+            this.hp = hp;
+            this.texture = texture;
+            this.driftsound = driftsound;
+            this.onroad = onroad;
+            this.speedx = 0;
+            this.speedy = 0;
+        }
+
+            
+
 
     }
 }
