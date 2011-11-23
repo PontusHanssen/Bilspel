@@ -16,9 +16,13 @@ namespace Bilspelet
         private float angle;
         private float speedx;
         private float speedy;
+        private float speed;
+        private int friction;
+        private int mass;
         private int hp;
-        private int x;
-        private int y;
+        private float x;
+        private float y;
+        private Vector2 position;
         private bool onroad;
         private SoundEffect driftsound;
         private Texture2D texture;
@@ -43,29 +47,55 @@ namespace Bilspelet
             get { return speedy; }
             set { speedy = value; }
         }
+        public float Speed
+        {
+            get { return speed; }
+            set { speed = value; }
+        }
         public int HP
         {
             get { return hp; }
         }
-        public int X
+        public float X
         {
             get { return x; }
             set { x = value; }
         }
-        public int Y
+        public float Y
         {
             get { return y; }
             set { y = value; }
+        }
+        public int Friction
+        {
+            get { return friction; }
+            set { friction = value; }
+        }
+        public int Mass
+        {
+            get { return mass; }
+            set { mass = value; }
         }
         public bool OnRoad
         {
             get { return onroad; }
             set { onroad = value; }
         }
-        public Rectangle Collision
+        public Rectangle Rectangle
         {
-            get { return new Rectangle(x, y, texture.Width, texture.Height); }
+            get { return new Rectangle((int)x, (int)y, texture.Width, texture.Height); }
         }
+        public Vector2 Position
+        {
+            get { return new Vector2(X,Y); }
+            set
+            {
+                x = Position.X;
+                y = Position.Y;
+            }
+
+        }
+
 
         public Texture2D Texture
         {
@@ -77,13 +107,13 @@ namespace Bilspelet
             get { return driftsound; }
             set { driftsound = value; }
         }
-        public Car(int x, int y, int hp, Texture2D texture, SoundEffect driftsound, bool onroad)
+        public Car(int x, int y, int hp, Texture2D texture, bool onroad)
         {
             this.x = x;
             this.y = y;
             this.hp = hp;
             this.texture = texture;
-            this.driftsound = driftsound;
+            //this.driftsound = driftsound;
             this.onroad = onroad;
             this.speedx = 0;
             this.speedy = 0;

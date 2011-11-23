@@ -19,6 +19,11 @@ namespace Bilspelet
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        float turn = 0.06f;
+
+        Car PlayerCar;
+        Physics Physics = new Physics();
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -46,6 +51,10 @@ namespace Bilspelet
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            PlayerCar = new Car(100, 100, 10, Content.Load<Texture2D>("./Textures/car"), true);
+            PlayerCar.Speed = 5;
+            PlayerCar.Mass = 1000;
+            PlayerCar.Friction = 2000;
 
             // TODO: use this.Content to load your game content here
         }
@@ -69,8 +78,22 @@ namespace Bilspelet
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
+            //Kör i cirklar.
+            //PlayerCar.Angle += turn;
 
-            // TODO: Add your update logic here
+            //Testa bromsning
+            if (PlayerCar.Speed > 0.01f)
+            {
+                PlayerCar.Speed = Physics.Brake(PlayerCar.Speed, PlayerCar.Friction, 1, PlayerCar.Mass);
+
+            }
+            else
+            {
+                turn = 0;
+            }
+            PlayerCar.X += (float)Math.Cos(PlayerCar.Angle) * PlayerCar.Speed;
+            PlayerCar.Y += (float)Math.Sin(PlayerCar.Angle) * PlayerCar.Speed;
+
 
             base.Update(gameTime);
         }
@@ -84,6 +107,12 @@ namespace Bilspelet
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            spriteBatch.Begin();
+
+            spriteBatch.Draw(PlayerCar.Texture, PlayerCar.Position, null, Color.White, PlayerCar.Angle, Vector2.Zero, 1.0f, SpriteEffects.None, 0);
+
+
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }

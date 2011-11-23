@@ -1,0 +1,7 @@
+C:\Users\Simon\bilspel\Bilspelet\Bilspelet\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Simon\bilspel\Bilspelet\Bilspelet\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Simon\bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Textures\car.xnb
+C:\Users\Simon\bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Bilspelet.exe
+C:\Users\Simon\bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Bilspelet.pdb
+C:\Users\Simon\bilspel\Bilspelet\Bilspelet\obj\x86\Debug\Bilspelet.exe
+C:\Users\Simon\bilspel\Bilspelet\Bilspelet\obj\x86\Debug\Bilspelet.pdb
