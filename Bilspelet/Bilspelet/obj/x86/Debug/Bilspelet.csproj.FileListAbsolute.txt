@@ -5,3 +5,11 @@ C:\Users\Simon\bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Bilspelet.exe
 C:\Users\Simon\bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Bilspelet.pdb
 C:\Users\Simon\bilspel\Bilspelet\Bilspelet\obj\x86\Debug\Bilspelet.exe
 C:\Users\Simon\bilspel\Bilspelet\Bilspelet\obj\x86\Debug\Bilspelet.pdb
+C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Textures\red.xnb
+C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Textures\blue.xnb
+C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Bilspelet.exe
+C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Bilspelet.pdb
+C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\obj\x86\Debug\Bilspelet.exe
+C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\obj\x86\Debug\Bilspelet.pdb

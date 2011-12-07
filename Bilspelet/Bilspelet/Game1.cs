@@ -51,7 +51,7 @@ namespace Bilspelet
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            PlayerCar = new Car(100, 100, 10, Content.Load<Texture2D>("./Textures/car"), true);
+            PlayerCar = new Car(100, 100, 10, Content.Load<Texture2D>("./Textures/blue"), true);
             PlayerCar.Speed = 5;
             PlayerCar.Mass = 1000;
             PlayerCar.Friction = 2000;

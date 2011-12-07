@@ -2,13 +2,22 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>Textures\car.png</Source>
-      <Name>Textures\car</Name>
+      <Source>Textures\red.png</Source>
+      <Name>Textures\red</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Simon\bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Textures\car.xnb</Output>
-      <Time>2011-11-23T13:56:23.534+01:00</Time>
+      <Output>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Textures\red.xnb</Output>
+      <Time>2011-12-07T10:13:10.849+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\blue.png</Source>
+      <Name>Textures\blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Textures\blue.xnb</Output>
+      <Time>2011-12-07T10:37:15.263+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -16,10 +25,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Simon\bilspel\Bilspelet\BilspeletContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Simon\bilspel\Bilspelet\Bilspelet\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Simon\bilspel\Bilspelet\BilspeletContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Simon\bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\BilspeletContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\BilspeletContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -48,7 +57,7 @@
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2011-09-15T21:08:09.0464+02:00</Value>
+        <Value>2011-09-19T11:24:04.46785+02:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
