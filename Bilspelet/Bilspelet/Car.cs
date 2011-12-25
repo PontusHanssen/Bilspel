@@ -10,114 +10,143 @@ using Microsoft.Xna.Framework;
 
 namespace Bilspelet
 {
-    class Car
+    public class Car
     {
-        private float wheels;
-        private float angle;
-        private float speedx;
-        private float speedy;
-        private float speed;
-        private int friction;
-        private int mass;
-        private int hp;
-        private float x;
-        private float y;
-        private Vector2 position;
-        private bool onroad;
-        private SoundEffect driftsound;
-        private Texture2D texture;
+        private float _wheels;
+        private float _angle;
+        private float _speedx;
+        private float _speedy;
+        private float _speed;
+        private int _friction;
+        private int _mass;
+        private int _hp;
+        private int _wheelbase;
+        private float _x;
+        private float _y;
+        private float _prevx;
+        private float _prevy;
+        private float _acceleration;
+        private Vector2 _position;
+        private Vector2 _prevpos;
+        private bool _onroad;
+        private SoundEffect _driftsound;
+        private Texture2D _texture;
 
-        public float Wheels
+        public float wheels
         {
-            get { return wheels; }
-            set { wheels = value; }
+            get { return _wheels; }
+            set { _wheels = value; }
         }
-        public float Angle
+        public float angle
         {
-            get { return angle; }
-            set { angle = value; }
+            get { return _angle; }
+            set { _angle = value; }
         }
-        public float SpeedX
+        public float speedX
         {
-            get { return speedx; }
-            set { speedx = value; }
+            get { return _speedx; }
+            set { _speedx = value; }
         }
-        public float SpeedY
+        public float speedY
         {
-            get { return speedy; }
-            set { speedy = value; }
+            get { return _speedy; }
+            set { _speedy = value; }
         }
-        public float Speed
+        public float speed
         {
-            get { return speed; }
-            set { speed = value; }
+            get { return _speed; }
+            set { _speed = value; }
         }
-        public int HP
+        public float acceleration
         {
-            get { return hp; }
+            get { return _acceleration; }
+            set { _acceleration = value; }
         }
-        public float X
+        public float topspeed
         {
-            get { return x; }
-            set { x = value; }
+            get { return mass * friction / 50; }
         }
-        public float Y
+            public int hp
         {
-            get { return y; }
-            set { y = value; }
+            get { return _hp; }
+            set { _hp = value; }
         }
-        public int Friction
+        public int wheelbase
         {
-            get { return friction; }
-            set { friction = value; }
+            get { return _wheelbase; }
+            set { _wheelbase = value; }
         }
-        public int Mass
+        public float x
         {
-            get { return mass; }
-            set { mass = value; }
+            get { return _x; }
+            set { _x = value; }
         }
-        public bool OnRoad
+        public float y
         {
-            get { return onroad; }
-            set { onroad = value; }
+            get { return _y; }
+            set { _y = value; }
         }
-        public Rectangle Rectangle
+        public float prevx
         {
-            get { return new Rectangle((int)x, (int)y, texture.Width, texture.Height); }
+            get { return _prevx; }
+            set { _prevx = value; }
         }
-        public Vector2 Position
+        public float prevy
         {
-            get { return new Vector2(X,Y); }
+            get { return _prevy; }
+            set { _prevy = value; }
+        }
+        public int friction
+        {
+            get { return _friction; }
+            set { _friction = value; }
+        }
+        public int mass
+        {
+            get { return _mass; }
+            set { _mass = value; }
+        }
+        public bool onRoad
+        {
+            get { return _onroad; }
+            set { _onroad = value; }
+        }
+        public Rectangle rectangle
+        {
+            get { return new Rectangle((int)_x, (int)_y, _texture.Width, _texture.Height); }
+        }
+        public Vector2 position
+        {
+            get { return new Vector2(_x,_y); }
             set
             {
-                x = Position.X;
-                y = Position.Y;
+                _x = _position.X;
+                _y = _position.Y;
+            }
+
+        }
+        public Vector2 prevpos
+        {
+            get { return new Vector2(_prevx, _prevy); }
+            set
+            {
+                _prevx = _prevpos.X;
+                _prevy = _prevpos.Y;
             }
 
         }
 
+        public Texture2D texture
+        {
+            get { return _texture; }
+            set { _texture = value; }
+        }
+        public SoundEffect driftSound
+        {
+            get { return _driftsound; }
+            set { _driftsound = value; }
+        }
 
-        public Texture2D Texture
-        {
-            get { return texture; }
-            set { texture = value; }
-        }
-        public SoundEffect DriftSound
-        {
-            get { return driftsound; }
-            set { driftsound = value; }
-        }
-        public Car(int x, int y, int hp, Texture2D texture, bool onroad)
-        {
-            this.x = x;
-            this.y = y;
-            this.hp = hp;
-            this.texture = texture;
-            //this.driftsound = driftsound;
-            this.onroad = onroad;
-            this.speedx = 0;
-            this.speedy = 0;
-        }
 
             
 

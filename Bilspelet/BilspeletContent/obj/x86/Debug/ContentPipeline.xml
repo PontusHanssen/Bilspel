@@ -19,6 +19,15 @@
       <Output>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Textures\blue.xnb</Output>
       <Time>2011-12-07T10:37:15.263+01:00</Time>
     </Item>
+    <Item>
+      <Source>Textures\map.png</Source>
+      <Name>Textures\map</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Textures\map.xnb</Output>
+      <Time>2011-12-23T01:43:38.0038+01:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

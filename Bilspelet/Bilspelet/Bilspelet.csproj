@@ -107,6 +107,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AI.cs" />
     <Compile Include="Car.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Physics.cs" />
