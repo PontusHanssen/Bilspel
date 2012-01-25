@@ -22,3 +22,15 @@ C:\Users\Pontus\Desktop\Bilspel - Copy\Bilspelet\Bilspelet\obj\x86\Debug\Microso
 C:\Users\Pontus\Desktop\Bilspel - Copy\Bilspelet\Bilspelet\obj\x86\Debug\Bilspelet.exe
 C:\Users\Pontus\Desktop\Bilspel - Copy\Bilspelet\Bilspelet\obj\x86\Debug\Bilspelet.pdb
 C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Textures\map.xnb
+C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Fonts\Font.xnb
+C:\Users\simon\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Textures\red.xnb
+C:\Users\simon\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Textures\blue.xnb
+C:\Users\simon\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Textures\map.xnb
+C:\Users\simon\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Fonts\Font.xnb
+C:\Users\simon\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Bilspelet.exe
+C:\Users\simon\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Bilspelet.pdb
+C:\Users\simon\Desktop\Bilspel\Bilspelet\Bilspelet\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\simon\Desktop\Bilspel\Bilspelet\Bilspelet\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\simon\Desktop\Bilspel\Bilspelet\Bilspelet\obj\x86\Debug\Bilspelet.exe
+C:\Users\simon\Desktop\Bilspel\Bilspelet\Bilspelet\obj\x86\Debug\Bilspelet.pdb
+C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Textures\mapcheck.xnb

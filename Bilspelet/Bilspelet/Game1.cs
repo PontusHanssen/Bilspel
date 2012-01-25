@@ -18,19 +18,21 @@ namespace Bilspelet
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        
-        float turn = 0.06f;
-        Map map;
+
+        SpriteFont Font;
+        public Map map;
         public AI copCar;
-        public AI playerCar;
+        public Player playerCar;
         Physics Physics = new Physics();
         public int laps=0;
-
+        bool leftright;
+        int gamestate = 0;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferWidth = 1280;
             graphics.PreferredBackBufferHeight = 800;
+            graphics.IsFullScreen = false;
             Content.RootDirectory = "Content";
         }
 
@@ -55,8 +57,9 @@ namespace Bilspelet
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            copCar = new AI(0, 0, 10, 10, 10, 10, Content.Load<Texture2D>(@"Textures/red"), true);
-            playerCar = new AI(0, 100, 10, 5, 0, 100, Content.Load<Texture2D>(@"Textures/blue"), true);
+            Font = Content.Load<SpriteFont>(@"Fonts/Font");
+            copCar = new AI(1200, 300, 10, 5, 10, Content.Load<Texture2D>(@"Textures/red"), true);
+            playerCar = new Player(1300, 350, 10, 5, 0, 100, Content.Load<Texture2D>(@"Textures/blue"), true);
             map = new Map(this);
             //PlayerCar = new Car(100, 100, 10, 1000, 5, 2000, Content.Load<Texture2D>("./Textures/blue"), true);
 
@@ -82,49 +85,116 @@ namespace Bilspelet
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
+
+            playerCar.curfriction = playerCar.friction;
+
             GamePadState GPad1 = GamePad.GetState(PlayerIndex.One);
-           
-
-          
-            //Kör i cirklar.
-            //PlayerCar.Angle += turn;
-            copCar.x += 1;
-            map.SetCamera(this);
-            map.CheckCheckpoints(this);
-
-
-            playerCar.prevx = playerCar.x;
-            playerCar.prevy = playerCar.y;
-            if (GPad1.Triggers.Left > 0)
+            if(gamestate == 0)
             {
-                playerCar.acceleration = GPad1.Triggers.Left * -1;
+                if(GPad1.Buttons.A == ButtonState.Pressed)
+                    gamestate = 1;
             }
-            else
+            if (gamestate == 1)
             {
-                if (GPad1.Triggers.Right == 0)
+                playerCar.curfriction = playerCar.friction;
+                //Kör i cirklar.
+                //PlayerCar.Angle += turn;
+                map.SetCamera(this, graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight);
+                map.CheckCheckpoints(this);
+
+
+                playerCar.prevx = playerCar.x;
+                playerCar.prevy = playerCar.y;
+                if (GPad1.Triggers.Left > 0)
                 {
-                    if (playerCar.speed > 0)
-                    {
-                        playerCar.acceleration = -0.5f;
-                    }
-                    else
-                    {
-                        playerCar.acceleration = 0;
-                    }
+                    playerCar.acceleration = GPad1.Triggers.Left * -1;
                 }
                 else
                 {
-                    playerCar.acceleration = GPad1.Triggers.Right;
+                    if (GPad1.Triggers.Right == 0)
+                    {
+                        if (playerCar.speed > 0)
+                        {
+                            playerCar.acceleration = -0.5f;
+                        }
+                        else
+                        {
+                            playerCar.acceleration = 0;
+                        }
+                    }
+                    else
+                    {
+                        playerCar.acceleration = GPad1.Triggers.Right;
+                    }
                 }
+
+                if (playerCar.onRoad)
+                {
+                    playerCar.speed = Physics.Acceleration(playerCar.speed, playerCar.friction, playerCar.acceleration, playerCar.mass, playerCar.topspeed, playerCar);
+                }
+                else
+                {
+                    if (playerCar.speed > 1.0f)
+                    {
+                        playerCar.speed = Physics.Acceleration(playerCar.speed, playerCar.friction, -0.5f, playerCar.mass, playerCar.topspeed, playerCar);
+                    }
+                    else
+                    {
+                        playerCar.speed = Physics.Acceleration(playerCar.speed, playerCar.friction, playerCar.acceleration * 0.1f, playerCar.mass, playerCar.topspeed, playerCar);
+                    }
+                }
+                playerCar.x += (float)Math.Cos(playerCar.angle) * playerCar.speed;
+                playerCar.y += (float)Math.Sin(playerCar.angle) * playerCar.speed;
+
+                playerCar.angle += Physics.Turn(playerCar.speed, playerCar.friction, playerCar.mass, playerCar.position, playerCar.prevpos, GPad1.ThumbSticks.Left.X, playerCar.wheelbase, playerCar);
+
+                Physics.Drift(playerCar, leftright);
+                if (GPad1.ThumbSticks.Left.X > 0)
+                    leftright = true;
+                else
+                {
+                    leftright = false;
+                }
+
+                if (playerCar.drift < 0 && GPad1.ThumbSticks.Left.X <= 0)
+                    playerCar.drift += 0.04f;
+                else if (playerCar.drift > 0 && GPad1.ThumbSticks.Left.X >= 0)
+                    playerCar.drift -= 0.04f;
+
+                if ((playerCar.x - map.picPos2.X + Math.Cos(playerCar.angle + playerCar.drift) * 50) < 1)
+                {
+                    playerCar.x = 10;
+                }
+                if ((playerCar.x - map.picPos2.X + Math.Cos(playerCar.angle + playerCar.drift) * 0) < 1)
+                {
+                    playerCar.x = 10;
+                }
+                if ((playerCar.x - map.picPos2.X + Math.Cos(playerCar.angle + playerCar.drift + 0.525) * 57.8) < 1)
+                {
+                    playerCar.x = 10;
+                }
+                if ((playerCar.x - map.picPos2.X + Math.Cos(playerCar.angle + playerCar.drift + MathHelper.PiOver2) * 29) < 1)
+                {
+                    playerCar.x = 10;
+                }
+
+                if (playerCar.position.X > graphics.PreferredBackBufferWidth)
+                {
+                    playerCar.x = graphics.PreferredBackBufferWidth - 1;
+                }
+                if (playerCar.position.Y < 0)
+                {
+                    playerCar.y = 10;
+                }
+                if (playerCar.position.Y > graphics.PreferredBackBufferHeight)
+                {
+                    playerCar.y = graphics.PreferredBackBufferHeight - 1;
+                }
+                playerCar.onRoad = map.OnRoad(this);
+                copCar.Drive(this);
             }
-            playerCar.speed = Physics.Acceleration(playerCar.speed, playerCar.friction, playerCar.acceleration, playerCar.mass, playerCar.topspeed);
-            playerCar.x += (float)Math.Cos(playerCar.angle) * playerCar.speed;
-            playerCar.y += (float)Math.Sin(playerCar.angle) * playerCar.speed;
-
-            playerCar.angle += Physics.Turn(playerCar.speed, playerCar.friction, playerCar.mass, playerCar.position, playerCar.prevpos, GPad1.ThumbSticks.Left.X, playerCar.wheelbase);
-
-
             base.Update(gameTime);
+
         }
 
         /// <summary>
@@ -134,15 +204,29 @@ namespace Bilspelet
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            // TODO: Add your drawing code here
             spriteBatch.Begin();
-            spriteBatch.Draw(map.map, map.picPos, Color.White);
-            spriteBatch.Draw(playerCar.texture, playerCar.position, null, Color.White, playerCar.angle, Vector2.Zero, 1.0f, SpriteEffects.None, 0);
-            spriteBatch.Draw(copCar.texture, copCar.position, null, Color.White, copCar.angle, Vector2.Zero, 1.0f, SpriteEffects.None, 0);
-            spriteBatch.Draw(copCar.texture, new Rectangle((int)map._checkpoint.X,(int)map._checkpoint.Y,1,500), Color.Brown);
-            spriteBatch.Draw(copCar.texture, new Rectangle((int)map._goal.X, (int)map._goal.Y, 1, 500), Color.Brown);
+            if (gamestate == 0)
+            {
+                spriteBatch.DrawString(Font, "Press A to start!", new Vector2(600, 400), Color.White);
+            }
+            if(gamestate == 1)
+            {
+            // TODO: Add your drawing code here
+                
+                spriteBatch.Draw(map.map, map.picPos, Color.White);
+                spriteBatch.Draw(playerCar.texture, playerCar.position, null, Color.White, (playerCar.angle+playerCar.drift), Vector2.Zero, 1.0f, SpriteEffects.None, 0);
 
+                spriteBatch.Draw(copCar.texture, new Vector2(copCar.x,copCar.y), null, Color.White, copCar.angle, Vector2.Zero, 1.0f, SpriteEffects.None, 0);
+                /*spriteBatch.Draw(copCar.texture, new Rectangle((int)map._checkpoint.X,(int)map._checkpoint.Y,1,500), Color.Brown);
+                spriteBatch.Draw(copCar.texture, new Rectangle((int)map._goal.X, (int)map._goal.Y, 1, 500), Color.Brown);
+                spriteBatch.Draw(playerCar.texture, new Rectangle((int)(playerCar.x + Math.Cos(playerCar.angle + playerCar.drift) * 50), (int)(playerCar.y + Math.Sin(playerCar.angle + playerCar.drift) * 50), 5, 5), Color.White);
+                spriteBatch.Draw(playerCar.texture, new Rectangle((int)(playerCar.x + Math.Cos(playerCar.angle + playerCar.drift) * 0), (int)(playerCar.y + Math.Sin(playerCar.angle + playerCar.drift) * 0), 5, 5), Color.White);
+                spriteBatch.Draw(playerCar.texture, new Rectangle((int)(playerCar.x + Math.Cos(playerCar.angle + playerCar.drift + 0.525) * 57.8), (int)(playerCar.y + Math.Sin(playerCar.angle + playerCar.drift + 0.525) * 57.8), 5, 5), Color.White);
+                spriteBatch.Draw(playerCar.texture, new Rectangle((int)(playerCar.x + Math.Cos(playerCar.angle + playerCar.drift + MathHelper.PiOver2) * 29), (int)(playerCar.y + Math.Sin(playerCar.angle + playerCar.drift + MathHelper.PiOver2) * 29), 5, 5), Color.White);*/
+                spriteBatch.DrawString(Font, "Laps: " + laps.ToString(), new Vector2(10, 10), Color.Red);
+                foreach (Vector2 vect in copCar.Targets)
+                    spriteBatch.Draw(copCar.texture, vect, Color.White);
+            }
             spriteBatch.End();
 
             base.Draw(gameTime);

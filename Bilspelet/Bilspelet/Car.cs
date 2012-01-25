@@ -18,8 +18,9 @@ namespace Bilspelet
         private float _speedy;
         private float _speed;
         private int _friction;
+        public float _drift;
+        private int _curfriction;
         private int _mass;
-        private int _hp;
         private int _wheelbase;
         private float _x;
         private float _y;
@@ -66,11 +67,7 @@ namespace Bilspelet
         {
             get { return mass * friction / 50; }
         }
-            public int hp
-        {
-            get { return _hp; }
-            set { _hp = value; }
-        }
+
         public int wheelbase
         {
             get { return _wheelbase; }
@@ -100,6 +97,16 @@ namespace Bilspelet
         {
             get { return _friction; }
             set { _friction = value; }
+        }
+        public int curfriction
+        {
+            get { return _curfriction; }
+            set { _curfriction = value; }
+        }
+        public float drift
+        {
+            get { return _drift; }
+            set { _drift = value; }
         }
         public int mass
         {
