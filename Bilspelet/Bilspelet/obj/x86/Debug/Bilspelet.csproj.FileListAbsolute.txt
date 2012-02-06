@@ -34,3 +34,10 @@ C:\Users\simon\Desktop\Bilspel\Bilspelet\Bilspelet\obj\x86\Debug\Microsoft.Xna.F
 C:\Users\simon\Desktop\Bilspel\Bilspelet\Bilspelet\obj\x86\Debug\Bilspelet.exe
 C:\Users\simon\Desktop\Bilspel\Bilspelet\Bilspelet\obj\x86\Debug\Bilspelet.pdb
 C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Textures\mapcheck.xnb
+C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Sounds\checkpoint.xnb
+C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Sounds\thrretwoonego.xnb
+C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Sounds\ontheroadagain.xnb
+C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Sounds\checkpoint.wma
+C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Sounds\thrretwoonego.wma
+C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Sounds\ontheroadagain.wma
+C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Textures\menubg.xnb

@@ -48,8 +48,7 @@ namespace Bilspelet
         public void SetCamera(Game1 g, int X, int Y)
         {
             Distance = new Vector2(X, Y) / 2 - new Vector2(g.playerCar.x, g.playerCar.y);
-            if (map.Bounds.Right + _picPos.X < X && Distance.X < 0 || _picPos.X > 0 && Distance.X > 0) ;
-            else
+            if (!(map.Bounds.Right + _picPos.X < X && Distance.X < 0 || _picPos.X > 0 && Distance.X > 0))
             {
                 g.playerCar.x += Distance.X;
                 g.copCar.x += Distance.X;
@@ -58,8 +57,7 @@ namespace Bilspelet
                 _goal.X += Distance.X;
                 _checkpoint.X += Distance.X;
             }
-            if (map.Bounds.Bottom + _picPos.Y < Y && Distance.Y < 0 || _picPos.Y > 0 && Distance.Y > 0) ;
-            else
+            if (!(map.Bounds.Bottom + _picPos.Y < Y && Distance.Y < 0 || _picPos.Y > 0 && Distance.Y > 0))
             {
                 g.playerCar.y += Distance.Y;
                 g.copCar.y += Distance.Y;
@@ -79,7 +77,10 @@ namespace Bilspelet
                 }
                 else ;
             else if (new Rectangle((int)g.playerCar.x, (int)g.playerCar.y, 1, 1).Intersects(new Rectangle((int)_checkpoint.X, (int)_checkpoint.Y, 100, 500)))
+            {
                 _hasPassed = true;
+                
+            }
         }
         public bool OnRoad(Game1 G)
         {

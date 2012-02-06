@@ -110,6 +110,7 @@
     <Compile Include="AI.cs" />
     <Compile Include="Car.cs" />
     <Compile Include="Map.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="Physics.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

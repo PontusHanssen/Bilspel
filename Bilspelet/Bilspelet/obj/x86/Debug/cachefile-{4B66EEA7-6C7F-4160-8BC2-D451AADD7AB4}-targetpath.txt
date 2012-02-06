@@ -3,3 +3,10 @@ Content\Textures\blue.xnb
 Content\Fonts\Font.xnb
 Content\Textures\mapcheck.xnb
 Content\Textures\map.xnb
+Content\Sounds\checkpoint.xnb
+Content\Sounds\checkpoint.wma
+Content\Sounds\thrretwoonego.xnb
+Content\Sounds\thrretwoonego.wma
+Content\Sounds\ontheroadagain.xnb
+Content\Sounds\ontheroadagain.wma
+Content\Textures\menubg.xnb

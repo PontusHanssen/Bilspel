@@ -24,6 +24,9 @@ namespace Bilspelet
         public AI copCar;
         public Player playerCar;
         Physics Physics = new Physics();
+        Song BackgroundMusic;
+        public Menu menu;
+        public SoundEffect checkpointSound;
         public int laps=0;
         bool leftright;
         int gamestate = 0;
@@ -57,10 +60,13 @@ namespace Bilspelet
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            BackgroundMusic = Content.Load<Song>(@"Sounds/ontheroadagain");
+         //   checkpointSound = Content.Load<SoundEffect>(@"Sounds/checkpoint");
             Font = Content.Load<SpriteFont>(@"Fonts/Font");
             copCar = new AI(1200, 300, 10, 5, 10, Content.Load<Texture2D>(@"Textures/red"), true);
             playerCar = new Player(1300, 350, 10, 5, 0, 100, Content.Load<Texture2D>(@"Textures/blue"), true);
             map = new Map(this);
+            menu = new Menu(this);
             //PlayerCar = new Car(100, 100, 10, 1000, 5, 2000, Content.Load<Texture2D>("./Textures/blue"), true);
 
             // TODO: use this.Content to load your game content here
@@ -89,10 +95,15 @@ namespace Bilspelet
             playerCar.curfriction = playerCar.friction;
 
             GamePadState GPad1 = GamePad.GetState(PlayerIndex.One);
+            //gamestate 0 är meny, 1 är racemeny, 2 är fritt spel, 3 är trim
             if(gamestate == 0)
             {
-                if(GPad1.Buttons.A == ButtonState.Pressed)
+                if (GPad1.Buttons.A == ButtonState.Pressed)
+                   {
                     gamestate = 1;
+                    MediaPlayer.Play(BackgroundMusic);
+                    
+                }
             }
             if (gamestate == 1)
             {
@@ -207,6 +218,7 @@ namespace Bilspelet
             spriteBatch.Begin();
             if (gamestate == 0)
             {
+                spriteBatch.Draw(menu.background, menu.bgrectangle, Color.White);
                 spriteBatch.DrawString(Font, "Press A to start!", new Vector2(600, 400), Color.White);
             }
             if(gamestate == 1)
@@ -216,7 +228,7 @@ namespace Bilspelet
                 spriteBatch.Draw(map.map, map.picPos, Color.White);
                 spriteBatch.Draw(playerCar.texture, playerCar.position, null, Color.White, (playerCar.angle+playerCar.drift), Vector2.Zero, 1.0f, SpriteEffects.None, 0);
 
-                spriteBatch.Draw(copCar.texture, new Vector2(copCar.x,copCar.y), null, Color.White, copCar.angle, Vector2.Zero, 1.0f, SpriteEffects.None, 0);
+                spriteBatch.Draw(copCar.texture, new Vector2(copCar.x,copCar.y), null, Color.White, copCar.angle, new Vector2(0, playerCar.texture.Height/2), 1.0f, SpriteEffects.None, 0);
                 /*spriteBatch.Draw(copCar.texture, new Rectangle((int)map._checkpoint.X,(int)map._checkpoint.Y,1,500), Color.Brown);
                 spriteBatch.Draw(copCar.texture, new Rectangle((int)map._goal.X, (int)map._goal.Y, 1, 500), Color.Brown);
                 spriteBatch.Draw(playerCar.texture, new Rectangle((int)(playerCar.x + Math.Cos(playerCar.angle + playerCar.drift) * 50), (int)(playerCar.y + Math.Sin(playerCar.angle + playerCar.drift) * 50), 5, 5), Color.White);

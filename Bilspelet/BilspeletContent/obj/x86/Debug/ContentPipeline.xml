@@ -46,6 +46,45 @@
       <Output>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Textures\map.xnb</Output>
       <Time>2012-01-21T02:26:03.1633+01:00</Time>
     </Item>
+    <Item>
+      <Source>Sounds\checkpoint.wma</Source>
+      <Name>Sounds\checkpoint</Name>
+      <Importer>WmaImporter</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Sounds\checkpoint.xnb</Output>
+      <Extra>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Sounds\checkpoint.wma</Extra>
+      <Time>2012-01-25T13:30:28.9103+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\thrretwoonego.wma</Source>
+      <Name>Sounds\thrretwoonego</Name>
+      <Importer>WmaImporter</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Sounds\thrretwoonego.xnb</Output>
+      <Extra>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Sounds\thrretwoonego.wma</Extra>
+      <Time>2012-01-25T13:30:28.9259+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\ontheroadagain.mp3</Source>
+      <Name>Sounds\ontheroadagain</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Sounds\ontheroadagain.xnb</Output>
+      <Extra>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Sounds\ontheroadagain.wma</Extra>
+      <Time>2012-01-25T13:42:13.687+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\menubg.jpg</Source>
+      <Name>Textures\menubg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Textures\menubg.xnb</Output>
+      <Time>2012-01-25T14:45:40.3966+01:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
