@@ -7,13 +7,15 @@ using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework;
+using System.Collections;
 
 namespace Bilspelet
 {
-   public class AI : Car
+    public class AI : Car
     {
-       public Vector2[] Targets = new Vector2[15];
-       public float angle;
+        public ArrayList copDest = new ArrayList();
+        public float angle;
+        int frame = 0;
         public AI(int x, int y, int mass, int speed, int friction, Texture2D texture, bool onroad)
         {
             this.x = x;
@@ -28,71 +30,37 @@ namespace Bilspelet
             this.speedY = 0;
             this.wheelbase = 28;
             this.acceleration = 0;
-            RestartLap();
         }
-        public void Drive(Game1 G)
+        public void Drive(Vector2 playerPos,int time)
         {
-            //Targets[14] = G.playerCar.position;
-            float minDist = 0,VectNr=0;
-            for (int i = 0; i < 13; i++)
+            if (frame % 15 == 0)
             {
-                Targets[i] += G.map.Distance;
+                copDest.Add(playerPos);
             }
-            for(int i =0;i<Targets.Length;i++)
+            if (copDest.Count > 0)
             {
-                Vector2 currVect;
-                if (i == Targets.Length)
+                Vector2 V = (Vector2)copDest[0];
+                double AdjacentCatethus = x - V.X;   //Anger avståndet  X led Närliggande katet i en triangel
+                double OppositeCathetus = y - V.Y;  //anger avståndet  Y let Motstående
+                angle = (float)Math.Atan(OppositeCathetus / AdjacentCatethus);           //räknar ut vinkeln mellan Närliggande och hypotenusa. Arctan(Mot/När)
+                if (x >= V.X)
+                    angle += MathHelper.Pi;
+                if (new Rectangle((int)x-5, (int)y-5, texture.Width, texture.Height).Contains((int)V.X, (int)V.Y))
                 {
-                    currVect = G.playerCar.position;
-                }
-                else
-                {
-                     currVect = Targets[i];
-                } 
-                double AdjacentCathetus = Math.Pow((currVect.X  - G.playerCar.position.X), 2);
-                double OppositeCathetus = Math.Pow((currVect.Y - G.playerCar.position.Y), 2);
-                double Hypothenouse = AdjacentCathetus + OppositeCathetus;
-                if (Hypothenouse < 100)
-                {
-
-                    Hypothenouse = double.MaxValue;
-                    currVect = new Vector2(float.MaxValue, float.MaxValue);
-                    Targets[i] = currVect;
-                }
-               
-                if (Hypothenouse < minDist|| minDist == 0)
-                {
-                    minDist = (float)Hypothenouse;
-                    VectNr = i;
+                    copDest.RemoveAt(0);
                 }
             }
-            Vector2 Target = Targets[(int)VectNr];
-            double AdCatethus = x - Target.X;   //Anger avståndet  X led Närliggande katet i en triangel
-            double OpCathetus = y - Target.Y;  //anger avståndet  Y let Motstående
-            angle = (float)(Math.Atan(OpCathetus / AdCatethus));           //räknar ut vinkeln mellan Närliggande och hypotenusa. Arctan(Mot/När)
-            if (x >= Target.X)
-                angle += (float)Math.PI;
-            x += speed * (float)Math.Cos(angle);
-            y += speed * (float)Math.Sin(angle);
-            if (VectNr == 0)
-                RestartLap();
-        }
-        public void RestartLap()
-        {
-            Targets[0] = new Vector2(1377, 379);
-            Targets[1] = new Vector2(2674, 533);
-            Targets[2] = new Vector2(3486, 187);
-            Targets[3] = new Vector2(3757, 327);
-            Targets[4] = new Vector2(3279, 675);
-            Targets[5] = new Vector2(3439, 901);
-            Targets[6] = new Vector2(2595, 767);
-            Targets[7] = new Vector2(1917, 1356);
-            Targets[8] = new Vector2(1310, 832);
-            Targets[9] = new Vector2(960, 960);
-            Targets[10] = new Vector2(748, 1358);
-            Targets[11] = new Vector2(428, 1274);
-            Targets[12] = new Vector2(84, 966);
-            Targets[13] = new Vector2(60, 654);
+            else
+            {
+                double AdjacentCatethus = x - playerPos.X;   //Anger avståndet  X led Närliggande katet i en triangel
+                double OppositeCathetus = y - playerPos.Y;  //anger avståndet  Y let Motstående
+                angle = (float)Math.Atan(OppositeCathetus / AdjacentCatethus);           //räknar ut vinkeln mellan Närliggande och hypotenusa. Arctan(Mot/När)
+                if (x >= playerPos.X)
+                    angle += MathHelper.Pi;
+            }
+            x += (float)(Math.Cos(angle) * 9.3);
+            y += (float)(Math.Sin(angle)*9.3);
+            frame++;
         }
     }
 }

@@ -27,7 +27,7 @@ namespace Bilspelet
         Song BackgroundMusic;
         public Menu menu;
         public SoundEffect checkpointSound;
-        public int laps=0;
+        public int laps = 0;
         bool leftright;
         int gamestate = 0;
         public Game1()
@@ -61,7 +61,7 @@ namespace Bilspelet
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             BackgroundMusic = Content.Load<Song>(@"Sounds/ontheroadagain");
-         //   checkpointSound = Content.Load<SoundEffect>(@"Sounds/checkpoint");
+            //   checkpointSound = Content.Load<SoundEffect>(@"Sounds/checkpoint");
             Font = Content.Load<SpriteFont>(@"Fonts/Font");
             copCar = new AI(1200, 300, 10, 5, 10, Content.Load<Texture2D>(@"Textures/red"), true);
             playerCar = new Player(1300, 350, 10, 5, 0, 100, Content.Load<Texture2D>(@"Textures/blue"), true);
@@ -96,13 +96,13 @@ namespace Bilspelet
 
             GamePadState GPad1 = GamePad.GetState(PlayerIndex.One);
             //gamestate 0 är meny, 1 är racemeny, 2 är fritt spel, 3 är trim
-            if(gamestate == 0)
+            if (gamestate == 0)
             {
                 if (GPad1.Buttons.A == ButtonState.Pressed)
-                   {
+                {
                     gamestate = 1;
-                    MediaPlayer.Play(BackgroundMusic);
-                    
+                    //MediaPlayer.Play(BackgroundMusic);
+
                 }
             }
             if (gamestate == 1)
@@ -202,7 +202,7 @@ namespace Bilspelet
                     playerCar.y = graphics.PreferredBackBufferHeight - 1;
                 }
                 playerCar.onRoad = map.OnRoad(this);
-                copCar.Drive(this);
+                copCar.Drive(playerCar.position,gameTime.TotalGameTime.Milliseconds);
             }
             base.Update(gameTime);
 
@@ -221,23 +221,19 @@ namespace Bilspelet
                 spriteBatch.Draw(menu.background, menu.bgrectangle, Color.White);
                 spriteBatch.DrawString(Font, "Press A to start!", new Vector2(600, 400), Color.White);
             }
-            if(gamestate == 1)
+            if (gamestate == 1)
             {
-            // TODO: Add your drawing code here
-                
-                spriteBatch.Draw(map.map, map.picPos, Color.White);
-                spriteBatch.Draw(playerCar.texture, playerCar.position, null, Color.White, (playerCar.angle+playerCar.drift), Vector2.Zero, 1.0f, SpriteEffects.None, 0);
+                // TODO: Add your drawing code here
 
-                spriteBatch.Draw(copCar.texture, new Vector2(copCar.x,copCar.y), null, Color.White, copCar.angle, new Vector2(0, playerCar.texture.Height/2), 1.0f, SpriteEffects.None, 0);
-                /*spriteBatch.Draw(copCar.texture, new Rectangle((int)map._checkpoint.X,(int)map._checkpoint.Y,1,500), Color.Brown);
-                spriteBatch.Draw(copCar.texture, new Rectangle((int)map._goal.X, (int)map._goal.Y, 1, 500), Color.Brown);
-                spriteBatch.Draw(playerCar.texture, new Rectangle((int)(playerCar.x + Math.Cos(playerCar.angle + playerCar.drift) * 50), (int)(playerCar.y + Math.Sin(playerCar.angle + playerCar.drift) * 50), 5, 5), Color.White);
-                spriteBatch.Draw(playerCar.texture, new Rectangle((int)(playerCar.x + Math.Cos(playerCar.angle + playerCar.drift) * 0), (int)(playerCar.y + Math.Sin(playerCar.angle + playerCar.drift) * 0), 5, 5), Color.White);
-                spriteBatch.Draw(playerCar.texture, new Rectangle((int)(playerCar.x + Math.Cos(playerCar.angle + playerCar.drift + 0.525) * 57.8), (int)(playerCar.y + Math.Sin(playerCar.angle + playerCar.drift + 0.525) * 57.8), 5, 5), Color.White);
-                spriteBatch.Draw(playerCar.texture, new Rectangle((int)(playerCar.x + Math.Cos(playerCar.angle + playerCar.drift + MathHelper.PiOver2) * 29), (int)(playerCar.y + Math.Sin(playerCar.angle + playerCar.drift + MathHelper.PiOver2) * 29), 5, 5), Color.White);*/
-                spriteBatch.DrawString(Font, "Laps: " + laps.ToString(), new Vector2(10, 10), Color.Red);
-                foreach (Vector2 vect in copCar.Targets)
-                    spriteBatch.Draw(copCar.texture, vect, Color.White);
+                spriteBatch.Draw(map.map, map.picPos, Color.White);
+                spriteBatch.Draw(playerCar.texture, playerCar.position, null, Color.White, (playerCar.angle + playerCar.drift), Vector2.Zero, 1.0f, SpriteEffects.None, 0);
+
+                spriteBatch.Draw(copCar.texture, new Vector2(copCar.x, copCar.y), null, Color.White, copCar.angle, new Vector2(0, playerCar.texture.Height / 2), 1.0f, SpriteEffects.None, 0);
+                if (copCar.copDest.Count > 0)
+                {
+                    Vector2 V = (Vector2)copCar.copDest[0];
+                    spriteBatch.Draw(copCar.texture, new Rectangle((int)V.X, (int)V.Y, 5, 5), Color.Blue);
+                }
             }
             spriteBatch.End();
 

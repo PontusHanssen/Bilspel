@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Textures\red.xnb</Output>
-      <Time>2011-12-07T10:13:11+01:00</Time>
+      <Output>C:\Users\Anton\Desktop\Tarffull-Bilspel-f5f3504\Bilspelet\Bilspelet\bin\x86\Debug\Content\Textures\red.xnb</Output>
+      <Time>2012-02-06T04:53:26+01:00</Time>
     </Item>
     <Item>
       <Source>Textures\blue.png</Source>
@@ -16,17 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Textures\blue.xnb</Output>
-      <Time>2011-12-07T10:37:15+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Fonts\Font.spritefont</Source>
-      <Name>Fonts\Font</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Fonts\Font.xnb</Output>
-      <Time>2012-01-20T21:50:32.3098+01:00</Time>
+      <Output>C:\Users\Anton\Desktop\Tarffull-Bilspel-f5f3504\Bilspelet\Bilspelet\bin\x86\Debug\Content\Textures\blue.xnb</Output>
+      <Time>2012-02-06T04:53:26+01:00</Time>
     </Item>
     <Item>
       <Source>Textures\mapcheck.bmp</Source>
@@ -34,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Textures\mapcheck.xnb</Output>
-      <Time>2012-01-21T02:37:04.5913+01:00</Time>
+      <Output>C:\Users\Anton\Desktop\Tarffull-Bilspel-f5f3504\Bilspelet\Bilspelet\bin\x86\Debug\Content\Textures\mapcheck.xnb</Output>
+      <Time>2012-02-06T04:53:26+01:00</Time>
     </Item>
     <Item>
       <Source>Textures\map.bmp</Source>
@@ -43,38 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Textures\map.xnb</Output>
-      <Time>2012-01-21T02:26:03.1633+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Sounds\checkpoint.wma</Source>
-      <Name>Sounds\checkpoint</Name>
-      <Importer>WmaImporter</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Sounds\checkpoint.xnb</Output>
-      <Extra>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Sounds\checkpoint.wma</Extra>
-      <Time>2012-01-25T13:30:28.9103+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Sounds\thrretwoonego.wma</Source>
-      <Name>Sounds\thrretwoonego</Name>
-      <Importer>WmaImporter</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Sounds\thrretwoonego.xnb</Output>
-      <Extra>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Sounds\thrretwoonego.wma</Extra>
-      <Time>2012-01-25T13:30:28.9259+01:00</Time>
-    </Item>
-    <Item>
-      <Source>Sounds\ontheroadagain.mp3</Source>
-      <Name>Sounds\ontheroadagain</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Sounds\ontheroadagain.xnb</Output>
-      <Extra>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Sounds\ontheroadagain.wma</Extra>
-      <Time>2012-01-25T13:42:13.687+01:00</Time>
+      <Output>C:\Users\Anton\Desktop\Tarffull-Bilspel-f5f3504\Bilspelet\Bilspelet\bin\x86\Debug\Content\Textures\map.xnb</Output>
+      <Time>2012-02-06T04:53:26+01:00</Time>
     </Item>
     <Item>
       <Source>Textures\menubg.jpg</Source>
@@ -82,8 +43,47 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\Textures\menubg.xnb</Output>
-      <Time>2012-01-25T14:45:40.3966+01:00</Time>
+      <Output>C:\Users\Anton\Desktop\Tarffull-Bilspel-f5f3504\Bilspelet\Bilspelet\bin\x86\Debug\Content\Textures\menubg.xnb</Output>
+      <Time>2012-02-06T04:53:26+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\Font.spritefont</Source>
+      <Name>Fonts\Font</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Anton\Desktop\Tarffull-Bilspel-f5f3504\Bilspelet\Bilspelet\bin\x86\Debug\Content\Fonts\Font.xnb</Output>
+      <Time>2012-02-06T04:53:26+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\checkpoint.wma</Source>
+      <Name>Sounds\checkpoint</Name>
+      <Importer>WmaImporter</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Anton\Desktop\Tarffull-Bilspel-f5f3504\Bilspelet\Bilspelet\bin\x86\Debug\Content\Sounds\checkpoint.xnb</Output>
+      <Extra>C:\Users\Anton\Desktop\Tarffull-Bilspel-f5f3504\Bilspelet\Bilspelet\bin\x86\Debug\Content\Sounds\checkpoint.wma</Extra>
+      <Time>2012-02-06T04:53:26+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\thrretwoonego.wma</Source>
+      <Name>Sounds\thrretwoonego</Name>
+      <Importer>WmaImporter</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Anton\Desktop\Tarffull-Bilspel-f5f3504\Bilspelet\Bilspelet\bin\x86\Debug\Content\Sounds\thrretwoonego.xnb</Output>
+      <Extra>C:\Users\Anton\Desktop\Tarffull-Bilspel-f5f3504\Bilspelet\Bilspelet\bin\x86\Debug\Content\Sounds\thrretwoonego.wma</Extra>
+      <Time>2012-02-06T04:53:26+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\ontheroadagain.mp3</Source>
+      <Name>Sounds\ontheroadagain</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Anton\Desktop\Tarffull-Bilspel-f5f3504\Bilspelet\Bilspelet\bin\x86\Debug\Content\Sounds\ontheroadagain.xnb</Output>
+      <Extra>C:\Users\Anton\Desktop\Tarffull-Bilspel-f5f3504\Bilspelet\Bilspelet\bin\x86\Debug\Content\Sounds\ontheroadagain.wma</Extra>
+      <Time>2012-02-06T04:53:26+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -91,10 +91,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\BilspeletContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\BilspeletContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Pontus\Desktop\Bilspel\Bilspelet\Bilspelet\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Anton\Desktop\Tarffull-Bilspel-f5f3504\Bilspelet\BilspeletContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Anton\Desktop\Tarffull-Bilspel-f5f3504\Bilspelet\Bilspelet\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Anton\Desktop\Tarffull-Bilspel-f5f3504\Bilspelet\BilspeletContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Anton\Desktop\Tarffull-Bilspel-f5f3504\Bilspelet\Bilspelet\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -123,7 +123,7 @@
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2011-09-19T11:24:04.46785+02:00</Value>
+        <Value>2011-03-27T22:41:39.613+02:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

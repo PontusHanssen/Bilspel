@@ -56,6 +56,12 @@ namespace Bilspelet
                 _picPos2.X += Distance.X;
                 _goal.X += Distance.X;
                 _checkpoint.X += Distance.X;
+                for (int i = 0; i < g.copCar.copDest.Count; i++)
+                {
+                    Vector2 V = (Vector2)g.copCar.copDest[i];
+                    V.X += Distance.X;
+                    g.copCar.copDest[i] = V;
+                }
             }
             if (!(map.Bounds.Bottom + _picPos.Y < Y && Distance.Y < 0 || _picPos.Y > 0 && Distance.Y > 0))
             {
@@ -65,6 +71,12 @@ namespace Bilspelet
                 _checkpoint.Y += Distance.Y;
                 _picPos.Y += Distance.Y;
                 _picPos2.Y += Distance.Y;
+                for (int i = 0; i < g.copCar.copDest.Count; i++)
+                {
+                    Vector2 V = (Vector2)g.copCar.copDest[i];
+                    V.Y += Distance.Y;
+                    g.copCar.copDest[i] = V;
+                }
             }
         }
         public void CheckCheckpoints(Game1 g)
